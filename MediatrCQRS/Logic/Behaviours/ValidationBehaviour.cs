@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MediatrCQRS.Logic.Behaviours
 {
+    //TODO #11: Validation Behaviour 
     public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TResponse : CQRSResponse, new()
     {

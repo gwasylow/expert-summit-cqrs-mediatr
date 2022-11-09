@@ -22,22 +22,28 @@ namespace MediatrCQRS
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        // This method gets called by the runtime.
+        // Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //Enable ResponseMapping Filet for controllers
+            //TODO: #0 Demo purpose:
+            //<<ToDo>> WebApi with End Points to get and insert ToDo items
+            //Simple in-memory storage (Repository with CRUD)
+
+
+            //Enable ResponseMapping Filter for controllers
             services.AddControllers(o => o.Filters.Add(typeof(ResponseMappingFilter)));
 
-            //Swagger
+            //TODO: #1 Swagger configuration (API endopints)            
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CQRS with MediatR", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CQRS with MediatR - Expert Summit 2022", Version = "v1" });
             });
 
             //Register our DI classes
             services.AddSingleton<IToDoRepository, ToDoRepository>();
 
-            //Register MadiatR
+            //TODO: #2 Register MadiatR library within our assembly to mediate between objects
             services.AddMediatR(typeof(Startup).Assembly);
 
             //Enable MediatR Validation
@@ -46,7 +52,7 @@ namespace MediatrCQRS
             //Enable memory cache
             services.AddMemoryCache();
 
-            //Setup MEdiatR Behaviours - order is important!
+            //TODO: #9 Setup of MediatR Behaviours - order is important!
             //Execution determined by order
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehaviour<,>));
@@ -57,11 +63,12 @@ namespace MediatrCQRS
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //Enable Swagger on PROD env. for a demo purpose
             if (env.IsDevelopment() || env.IsProduction())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CQRS with MediatR v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Expert Summit 2022 DEMO"));
             }
 
             app.UseHttpsRedirection();

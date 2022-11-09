@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace MediatrCQRS.Logic.Filters
 {
+    //TODO: #12 Extras: Reponse Mapping Filter - http status code reflected in a CQRS Response
     public class ResponseMappingFilter : IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context)

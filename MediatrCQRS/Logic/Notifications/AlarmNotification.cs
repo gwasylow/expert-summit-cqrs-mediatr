@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace MediatrCQRS.Logic.Notifications
 {
+    //TODO: #13 Notification sample
     //public record AlarmNotification(int Id, string Message) : INotification;
-
     public class AlarmNotification : INotification
     {
         public int Id { get; set; }

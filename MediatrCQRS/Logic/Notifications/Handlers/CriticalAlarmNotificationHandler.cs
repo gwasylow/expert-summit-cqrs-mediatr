@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediatrCQRS.Logic.Notifications.Handlers
 {
+    //TODO: #14 Notification sample - concrete handler
     public class CriticalAlarmNotificationHandler : INotificationHandler<AlarmNotification>
     {
         public CriticalAlarmNotificationHandler()

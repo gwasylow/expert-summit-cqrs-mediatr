@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 
 namespace MediatrCQRS.Logic.Behaviours
 {
+    //TODO #10 Behaviour sample
     public class LoggingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly ILogger<LoggingBehaviour<TRequest, TResponse>> _logger;

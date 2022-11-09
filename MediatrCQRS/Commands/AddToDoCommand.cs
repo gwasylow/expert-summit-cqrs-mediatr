@@ -9,6 +9,7 @@ using MediatrCQRS.ViewModels;
 
 namespace MediatrCQRS.Commands
 {
+    //TODO: #3 First CQRS Command
     public static class AddToDoCommand
     {
         // Command
@@ -38,6 +39,7 @@ namespace MediatrCQRS.Commands
             }
         }
 
+        //TODO: #4 CQRS Command handler (async Task<T> Handle
         // Handler
         public class Handler : IRequestHandler<Command, CQRSCommandResponse>
         {

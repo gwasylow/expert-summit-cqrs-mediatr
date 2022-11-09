@@ -9,11 +9,12 @@ using MediatrCQRS.Logic;
 
 namespace MediatrCQRS.Queries
 {
+    //TODO: #5 CQRS Query sample
     public static class GetToDoByIdQuery
     {
         //Query/Command
         //All data we would like to execute
-        //***We do not use the caching mechanism in here***
+        //*** We do not use the caching mechanism in here ***
         public class Query : IRequest<CQRSQueryResponse<Response>>
         {
             public int Id { get; }
@@ -24,9 +25,8 @@ namespace MediatrCQRS.Queries
             }
         }
 
-
-        //Handler:
-        //Business logic to execute -> returns a RESPONSE
+        //TODO: #6 CQRS Query Handler (async Task<T> Handle
+        //Handler: Business logic to execute -> returns a RESPONSE
         public class Handler : IRequestHandler<Query, CQRSQueryResponse<Response>>
         {
             private readonly IToDoRepository _toDoRepository;
@@ -50,7 +50,7 @@ namespace MediatrCQRS.Queries
             }
         }
 
-        //Reposne
+        //TODO: #7 CQRS Query Respone        
         public class Response
         {
             public int Id { get; init; }

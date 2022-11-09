@@ -21,3 +21,6 @@ WebAPI sample of ToDo List (.NET Core implementation)
   - Web App and Application Slots
 
 
+## Application map:
+![Simple application map](/app_map.png?raw=true "Simple Application Map")
+

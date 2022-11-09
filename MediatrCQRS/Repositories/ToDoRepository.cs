@@ -6,6 +6,7 @@ using MediatrCQRS.ViewModels;
 
 namespace MediatrCQRS.Repositories
 {
+    //In-memory ToDo database
     public class ToDoRepository : IToDoRepository
     {
         private IList<ToDoViewModel> _todosDatabase = new List<ToDoViewModel>();
@@ -38,7 +39,7 @@ namespace MediatrCQRS.Repositories
         {
             var nextId = _todosDatabase.Count + 1;
 
-            //add to our tempdb
+            //add to our in-memory tempdb
             _todosDatabase.Add(new ToDoViewModel { Id = nextId, Name = toDoViewModel.Name, Completed = toDoViewModel.Completed });
 
             return nextId;

@@ -10,12 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MediatrCQRS.Controllers
 {
+    //TODO: #8 CQRS and MediatR usage in Controller        
     [ApiController]
     [Route("[controller]/[action]")]
     public class ToDoController : ControllerBase
     {
         private readonly IMediator _mediator;
 
+        //Dependency Injection
         public ToDoController(IMediator mediator)
         {
             _mediator = mediator;
@@ -26,11 +28,9 @@ namespace MediatrCQRS.Controllers
         {
             var response = await _mediator.Send(new GetAllToDoCachedQuery.Query());
 
-            //Positve scenario second
             if (response != null)
                 return Ok(response);
 
-            //Negative scenario first
             return NotFound();
         }
 
@@ -50,12 +50,10 @@ namespace MediatrCQRS.Controllers
         [HttpPost]       
         public async Task<IActionResult> AddToDo(ToDoViewModel toDoViewModel)
         {
-            //Positive scenario second
             if (ModelState.IsValid && Request.IsHttps)
                 if (toDoViewModel.Validate_NoteIsNew())
                     return Ok(await _mediator.Send(new AddToDoCommand.Command(Name: toDoViewModel.Name)));
 
-            //Negative scenario first
             return NotFound();
         }
 

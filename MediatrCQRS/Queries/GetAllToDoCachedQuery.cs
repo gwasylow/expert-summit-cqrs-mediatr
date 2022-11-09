@@ -11,6 +11,7 @@ using MediatrCQRS.ViewModels;
 
 namespace MediatrCQRS.Queries
 {
+    //TODO: #9 Sample of Query which uses the Cache and MediatR Behaviour
     public class GetAllToDoCachedQuery
     {
         //Query/Command

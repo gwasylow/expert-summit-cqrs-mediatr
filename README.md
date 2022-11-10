@@ -13,7 +13,7 @@ WebAPI sample of ToDo List (.NET Core implementation)
   - Commands
   - Queries
   - Cached Queries
-  - Generic HTTTP response
+  - Generic HTTP response
 - `Continous Integration` and `Continous Deployment` based on `GitHub Actions`
 - `Azure setup`:
   - Resource Group
@@ -21,6 +21,6 @@ WebAPI sample of ToDo List (.NET Core implementation)
   - Web App and Application Slots
 
 
-## Application map:
+## Application map (high level overview):
 ![Simple application map](/app_map.png?raw=true "Simple Application Map")
 

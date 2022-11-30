@@ -1,5 +1,5 @@
-# Expert-Summit-CQRS-MediatR
-Expert Summit 2022 - CQRS &amp; MediatR Implementation for .NET
+# Microsoft Tech & Expert-Summit-CQRS-MediatR
+Microsoft Tech & Expert Summit 2022 - CQRS &amp; MediatR Implementation for .NET
 Presenation author: Grzegorz Wasylów (summ-it s. a.)
 
 WebAPI sample of ToDo List (.NET Core implementation)

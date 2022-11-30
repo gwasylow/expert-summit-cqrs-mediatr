@@ -68,7 +68,7 @@ namespace MediatrCQRS
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Expert Summit 2022 DEMO"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MS Tech Summit 2022 DEMO"));
             }
 
             app.UseHttpsRedirection();

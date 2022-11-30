@@ -37,7 +37,7 @@ namespace MediatrCQRS
             //TODO: #1 Swagger configuration (API endopints)            
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CQRS with MediatR - Expert Summit 2022", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CQRS with MediatR - MS Tech Summit 2022", Version = "v1" });
             });
 
             //Register our DI classes
